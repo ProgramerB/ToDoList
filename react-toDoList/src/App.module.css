@@ -1,0 +1,90 @@
+.body{
+    font-family: cursive;
+}
+
+h1{
+    color: red;
+    text-align: center;
+    font-size: 35px;
+    text-decoration: underline;
+    
+}
+.options{
+    text-align: center;
+}
+table.todo{
+    border-collapse: collapse;
+    width: 90%;
+    margin: 5%;
+}
+
+table.todo tr{
+    border-bottom: 2px solid black;
+}
+table.todo tr:last-child{
+    border-bottom: 2px solid white;
+}
+
+table.todo th, td {
+    text-align: left;
+    padding: 8px;
+    font-size: 18px;
+    
+}
+
+table.todo td{
+    font-style: italic;
+}
+
+table.option{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+input.textbox{
+    border-bottom: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    height: 30px;
+    width: 100%;
+}
+
+.submit_button{
+    background-color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.submit_button:hover{
+    background-color: rebeccapurple;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    color: transparent;
+}
+
+.notice{
+    text-align: center;
+    font-size: 20px;
+}
+
+.checkbox_custom{
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+::placeholder {
+    text-align: center; 
+    font-style: italic;
+    font-family: cursive;
+ }
