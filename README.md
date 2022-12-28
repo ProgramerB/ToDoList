@@ -12,6 +12,7 @@ This Todo List stores its data as attributes in the keycloak server so you need 
 There are the attributes you are required to set as the scopes for both the clients:
 1. `newList` as a JSON variable, this will store the toDoList data.
 2. `paid` as a boolean, this is to check weather user is a premium user or not.
+
 Also enable 'Add to Access Token' for both of these.
 
 You will also require to modify keycloak's database to increase size of the attributes column of user table as the default limit of 255 characters isn't sufficent.
