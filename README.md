@@ -25,4 +25,4 @@ Also enable 'Add to Access Token' for both of these.
 
 You will also require to modify keycloak's database to increase size of the attributes column of user table as the default limit of 255 characters isn't sufficent.
 
-To run the application just run `app.py` and the react-app using `nmp-start`
+To run the application just run `app.py` and the react-app using `npm-start`
