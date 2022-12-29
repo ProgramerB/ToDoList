@@ -9,8 +9,8 @@ To run this app you require Keycloak to be set up with three clients,two for the
 - Server Client:
   This client will be used by the flask server to fetch user-data and post it to the front-end.
   
-You need to enable client authentication for both of these to work.
-Update the client_secret keys on 'app.py'.
+   You need to enable client authentication for both of these to work.
+   Update the client_secret keys on 'app.py'.
 
 2. Frontend keycloak client:
 Don't enable client authentication for this one just update with client_id on `index.js`
