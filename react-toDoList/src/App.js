@@ -2,16 +2,22 @@ import React, {useState, useRef, useEffect} from "react";
 import ToDoList from "./ToDoList";
 import { v4 as uuidv4 } from 'uuid';
 import styles from './App.module.css';
+// import {Elements} from '@stripe/react-stripe-js';
+// import {loadStripe} from '@stripe/stripe-js';
+// import CheckoutForm from "./CheckoutForm"
+import Timer from './Timer';
 
 const apiURL = "http://127.0.0.1:5000/"
 const localKey = 'toDoApp.toDos'
+
+// const stripePromise = loadStripe('pk_test_51MLg3nSIGyjyh5JWjBYRtroGMlL7kYLS8luj3lN1fBPzF8tEEqDg6hRHGmziEOVS5aXZI17id7iMxkqdRuIeuygi00chJH02ao');
 
 function App() {
   const[toDos, setToDos] = useState([])
   const toDoNameAddRef = useRef()
   const toDoContentAddRef = useRef()
 
-  
+  // const options = {clientSecret: '{{sk_test_51MLg3nSIGyjyh5JWEbXRvyLyhBFSOQ0tNQisVLbhAXBaNfYZAzDU7pw2dIk6cc10a46rzwBmRgiTwMa3wthJM3Zj00lZdObVR4}}'};
 
   const postData = async (item) => {
     try {
@@ -53,7 +59,7 @@ function App() {
     try {
       const newData = {
         "access_token": getData,
-        "query": "query myQuery{name id paid list{ id name status content image } }"
+        "query": "query myQuery{name id paid list{ id name status content image time} }"
       }
       const response = await fetch(apiURL+"getGraphql", {method:'POST',mode:'cors',body: JSON.stringify(newData),
       headers: {
@@ -66,6 +72,7 @@ function App() {
         updateData([])
       }
       setToDos(data.list)
+      console.log(data.list)
       
     }
     catch (e) {
@@ -134,6 +141,7 @@ function App() {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
       <h1>TO DO LIST</h1>
+      <Timer />
       <div class={styles.notice} >{toDos.filter(toDo => !toDo.status).length} left to do</div>
       <table className={styles.todo}>
         <tr>

@@ -12,7 +12,7 @@ keycloak_openid = KeycloakOpenID(server_url="http://localhost:8080/",
 keycloak_admin = KeycloakAdmin(server_url="http://localhost:8080/",
                                realm_name="TestRealm",
                                client_secret_key="m83oMgFCyxgypqepq6CxPLvS6Qt6CcJx",
-                               verify=True)
+                               )
 app = Flask(__name__)
 react_url="http://localhost:3000/"
 cor = CORS(app)
@@ -79,11 +79,16 @@ def postAttributes():
                                                 'paid':userData['paid']
                                                 }})
     except:
+        keycloak_admin.refresh_token()
+        print('keycloak refresh')
         keycloak_admin.update_user(user_id=userData['sub'],
                                 payload={
                                     'attributes': { 'newList':json.dumps(userData['newList']),
                                                 'paid':False
                                                 }})
+        # keycloak_admin.refresh_token()
+        
+        
 
 @app.route('/')
 def hello_world():

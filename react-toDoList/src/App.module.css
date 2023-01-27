@@ -1,7 +1,6 @@
 .body{
     font-family: cursive;
 }
-
 h1{
     color: red;
     text-align: center;
@@ -88,3 +87,9 @@ input[type="file"] {
     font-style: italic;
     font-family: cursive;
  }
+
+h2{
+    position: absolute;
+    top:1%;
+    right: 1%;
+}
